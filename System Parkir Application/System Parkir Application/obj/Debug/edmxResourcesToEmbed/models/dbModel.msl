@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="dbEntities">
+    <EntitySetMapping Name="Parkirs">
+      <EntityTypeMapping TypeName="dbModel.Parkir">
+        <MappingFragment StoreEntitySet="Parkir">
+          <ScalarProperty Name="parkirID" ColumnName="parkirID" />
+          <ScalarProperty Name="tiketID" ColumnName="tiketID" />
+          <ScalarProperty Name="pengemudiID" ColumnName="pengemudiID" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="lantai" ColumnName="lantai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pengemudis">
+      <EntityTypeMapping TypeName="dbModel.Pengemudi">
+        <MappingFragment StoreEntitySet="Pengemudi">
+          <ScalarProperty Name="pengemudiID" ColumnName="pengemudiID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="platNomor" ColumnName="platNomor" />
+          <ScalarProperty Name="tiketID" ColumnName="tiketID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tikets">
+      <EntityTypeMapping TypeName="dbModel.Tiket">
+        <MappingFragment StoreEntitySet="Tiket">
+          <ScalarProperty Name="tiketID" ColumnName="tiketID" />
+          <ScalarProperty Name="waktuMasuk" ColumnName="waktuMasuk" />
+          <ScalarProperty Name="waktuKeluar" ColumnName="waktuKeluar" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="harga" ColumnName="harga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

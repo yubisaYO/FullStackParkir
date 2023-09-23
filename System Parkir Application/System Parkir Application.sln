@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System Parkir Application", "System Parkir Application\System Parkir Application.csproj", "{0194F813-0BA1-48EB-9385-27D159C6316D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0194F813-0BA1-48EB-9385-27D159C6316D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0194F813-0BA1-48EB-9385-27D159C6316D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0194F813-0BA1-48EB-9385-27D159C6316D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0194F813-0BA1-48EB-9385-27D159C6316D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1A30448-0D7D-4626-BB1A-CC42F0C913AC}
+	EndGlobalSection
+EndGlobal

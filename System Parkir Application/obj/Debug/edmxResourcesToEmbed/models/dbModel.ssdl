@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Parkir">
+    <Key>
+      <PropertyRef Name="parkirID" />
+    </Key>
+    <Property Name="parkirID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tiketID" Type="int" />
+    <Property Name="pengemudiID" Type="int" />
+    <Property Name="area" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lantai" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pengemudi">
+    <Key>
+      <PropertyRef Name="pengemudiID" />
+    </Key>
+    <Property Name="pengemudiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="platNomor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tiketID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tiket">
+    <Key>
+      <PropertyRef Name="tiketID" />
+    </Key>
+    <Property Name="tiketID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="waktuMasuk" Type="datetime" />
+    <Property Name="waktuKeluar" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="harga" Type="int" />
+  </EntityType>
+  <Association Name="FK_Pengemudi_Tiket">
+    <End Role="Tiket" Type="Self.Tiket" Multiplicity="0..1" />
+    <End Role="Pengemudi" Type="Self.Pengemudi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tiket">
+        <PropertyRef Name="tiketID" />
+      </Principal>
+      <Dependent Role="Pengemudi">
+        <PropertyRef Name="tiketID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Pengemudi">
+    <End Role="Pengemudi" Type="Self.Pengemudi" Multiplicity="0..1" />
+    <End Role="Parkir" Type="Self.Parkir" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pengemudi">
+        <PropertyRef Name="pengemudiID" />
+      </Principal>
+      <Dependent Role="Parkir">
+        <PropertyRef Name="pengemudiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Tiket">
+    <End Role="Tiket" Type="Self.Tiket" Multiplicity="0..1" />
+    <End Role="Parkir" Type="Self.Parkir" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tiket">
+        <PropertyRef Name="tiketID" />
+      </Principal>
+      <Dependent Role="Parkir">
+        <PropertyRef Name="tiketID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbModelStoreContainer">
+    <EntitySet Name="Parkir" EntityType="Self.Parkir" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pengemudi" EntityType="Self.Pengemudi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tiket" EntityType="Self.Tiket" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Pengemudi_Tiket" Association="Self.FK_Pengemudi_Tiket">
+      <End Role="Tiket" EntitySet="Tiket" />
+      <End Role="Pengemudi" EntitySet="Pengemudi" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Pengemudi" Association="Self.FK_Table_Pengemudi">
+      <End Role="Pengemudi" EntitySet="Pengemudi" />
+      <End Role="Parkir" EntitySet="Parkir" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Tiket" Association="Self.FK_Table_Tiket">
+      <End Role="Tiket" EntitySet="Tiket" />
+      <End Role="Parkir" EntitySet="Parkir" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
